@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Online Voting System</h1>
+    </header>
+
+    <main>
+        <!-- Welcome Page -->
+        <div id="welcome" class="container active">
+            <div class="logo-container">
+                <img src="img.png" alt="Logo">
+            </div>
+            <div class="welcome-header">Welcome to the Voting System</div>
+            <div class="welcome-buttons">
+                <button class="button" onclick="showPage('registration')">Register</button>
+                <button class="button" onclick="showPage('login')">Login</button>
+                <button class="button" onclick="showPage('adminLogin')">Admin Login</button>
+            </div>
+        </div>
+
+        <!-- Registration Page -->
+        <div id="registration" class="container">
+            <h2>Registration</h2>
+            <form id="registrationForm">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" placeholder="Enter your student ID" required>
+
+                <label for="studentName">Student Name:</label>
+                <input type="text" id="studentName" placeholder="Enter your name" required>
+
+                <label for="role">Role:</label>
+                <select id="role" required>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter a password" required>
+
+                <button type="submit" class="button">Register</button>
+                <p>Already registered? <a href="#" onclick="showPage('login')">Login here</a></p>
+            </form>
+        </div>
+
+        <!-- Login Page -->
+        <div id="login" class="container">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="loginStudentId">Student ID:</label>
+                <input type="text" id="loginStudentId" placeholder="Enter your student ID" required>
+
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+
+                <button type="submit" class="button">Login</button>
+                <p>Not registered? <a href="#" onclick="showPage('registration')">Register here</a></p>
+            </form>
+        </div>
+
+        <!-- Admin Login Page -->
+        <div id="adminLogin" class="container">
+            <h2>Admin Login</h2>
+            <form id="adminLoginForm">
+                <label for="adminUsername">Username:</label>
+                <input type="text" id="adminUsername" placeholder="Enter admin username" required>
+
+                <label for="adminPassword">Password:</label>
+                <input type="password" id="adminPassword" placeholder="Enter admin password" required>
+
+                <button type="submit" class="button">Login</button>
+            </form>
+        </div>
+
+        <!-- Voting Page -->
+        <div id="voting" class="container">
+            <h2>Vote for your Candidate</h2>
+            <form id="votingForm">
+                <label for="candidate">Choose a Candidate:</label>
+                <select id="candidate" required>
+                    <option value="John Doe">John Doe</option>
+                    <option value="Jane Smith">Jane Smith</option>
+                    <option value="Mary Johnson">Mary Johnson</option>
+                </select>
+                <button type="submit" class="button">Vote</button>
+            </form>
+            <div id="voteMessage"></div>
+        </div>
+
+        <!-- Results Page (Admin Only) -->
+        <div id="results" class="container">
+            <h2>Election Results</h2>
+
+            <!-- Admin Time Settings for Voting -->
+            <div class="time-settings">
+                <h3>Set Voting Time</h3>
+                <label for="startDateTime">Start Date & Time:</label>
+                <input type="datetime-local" id="startDateTime" required>
+                <label for="endDateTime">End Date & Time:</label>
+                <input type="datetime-local" id="endDateTime" required>
+                <button class="button" onclick="saveVotingTimes()">Save Times</button>
+            </div>
+
+            <table class="result-table">
+                <tr>
+                    <th>Candidate</th>
+                    <th>Votes</th>
+                    <th>Slogan</th>
+                </tr>
+                <tr>
+                    <td>John Doe</td>
+                    <td id="johnVotes">0</td>
+                    <td class="candidate-slogan">"Empowering students for a brighter future!"</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td id="janeVotes">0</td>
+                    <td class="candidate-slogan">"Leadership with integrity!"</td>
+                </tr>
+                <tr>
+                    <td>Mary Johnson</td>
+                    <td id="maryVotes">0</td>
+                    <td class="candidate-slogan">"Together we achieve more!"</td>
+                </tr>
+            </table>
+            <p><strong>Winner: </strong><span id="winner">To be determined</span></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Voting System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

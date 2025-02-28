@@ -1,0 +1,164 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to bottom right, #f0f4f8, #d9e8fc);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    background-color: #1e3c72;
+    color: white;
+    padding: 1.5rem 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 5px solid #3aaf85;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 2rem;
+}
+
+.container {
+    display: none;
+}
+
+.container.active {
+    display: block;
+}
+
+.button {
+    display: inline-block;
+    background: #1e3c72;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #3aaf85;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input,
+form select,
+form button {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #3aaf85;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(58, 175, 133, 0.5);
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.result-table th, .result-table td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+.result-table th {
+    background-color: #f1f1f1;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    width: 150px;
+    border-radius: 12px;
+}
+
+.welcome-header {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #1e3c72;
+}
+
+.welcome-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+.candidate-slogan {
+    font-style: italic;
+    color: #777;
+    margin-top: 5px;
+}
+
+.time-settings {
+    margin-bottom: 20px;
+}
+
+.time-settings input {
+    margin-right: 10px;
+}
